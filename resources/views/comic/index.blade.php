@@ -1,11 +1,14 @@
 @extends('layout.app')
 
 @section('page.title')
-    Elenco Comics
+    Comics list
 @endsection
 
 @section('page.main')
 <div class="container">
+  <div class="text-center">
+    <a href="{{ route('comics.create') }}" class="btn btn-success">Create new Comic</a>
+  </div>
     <table class="table">
         <thead>
           <tr>
