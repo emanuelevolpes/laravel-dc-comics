@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1 class="text-center">@yield('page.title')</h1>
+        <h1 class="text-center py-4">@yield('page.title')</h1>
     </header>
     <main>
         @yield('page.main')
