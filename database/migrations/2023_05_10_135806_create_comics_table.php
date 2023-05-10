@@ -18,13 +18,13 @@ return new class extends Migration
 
             $table->string('title', 50);
             $table->text('description');
-            $table->string('thumb');
+            $table->text('thumb');
             $table->string('price');
             $table->string('series');
             $table->date('sale_date');
             $table->string('type');
-            $table->string('atrists');
-            $table->string('writers');
+            $table->text('artists');
+            $table->text('writers');
 
             $table->timestamps();
         });
