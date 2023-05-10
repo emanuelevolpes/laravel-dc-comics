@@ -5,7 +5,25 @@
 @endsection
 
 @section('page.main')
-    @foreach ($comics as $comic)
-        <li>{{ $comic->title }}</li>
-    @endforeach
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Series</th>
+            <th scope="col">Price</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+    
+        @foreach ($comics as $comic)
+        <tbody>
+          <tr>
+            <td>{{ $comic->series }}</td>
+            <td>{{ $comic->price }}</td>
+            <td>{{ $comic->type }}</td>
+          </tr>
+        </tbody>
+        @endforeach
+    </table>
+</div>
 @endsection
