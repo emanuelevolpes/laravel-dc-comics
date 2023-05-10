@@ -1,4 +1,4 @@
-# Laravel DC Comics
+ # Laravel DC Comics
 
 ## Milestone 1
 Tramite gli appositi comandi artisan create un model con relativa migration e un resource controller.
