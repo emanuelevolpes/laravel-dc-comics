@@ -30,5 +30,8 @@
         </tbody>
         @endforeach
     </table>
+    <div class="text-center my-3">
+      <a href="{{ route('home') }}" class="btn btn-danger">Back to Home page</a>
+    </div>
 </div>
 @endsection
