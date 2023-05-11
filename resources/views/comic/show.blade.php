@@ -20,5 +20,10 @@
             <li><strong>Type:</strong> {{ $comic->type }}</li>
         </ul>
     </div>
+    <hr>
+    <div>
+        <p>{{ $comic->artists }}</p>
+    </div>
+    <hr>
 </div>
 @endsection
