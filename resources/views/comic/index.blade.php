@@ -5,41 +5,23 @@
 @endsection
 
 @section('page.main')
-<div class="container">
-  <div class="text-center">
-    <a href="{{ route('comics.create') }}" class="btn btn-success">Create new Comic</a>
-  </div>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Series</th>
-            <th scope="col">Price</th>
-            <th scope="col">Type</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-    
-        @foreach ($comics as $comic)
-        <tbody>
-          <tr> 
-            <td>{{ $comic->series }}</td>
-            <td>{{ $comic->price }}</td>
-            <td>{{ $comic->type }}</td>
-            <td>
-              <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary btn-sm">Details</a>
-              <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-info btn-sm">Edit</a>
-              <form action="{{ route('comics.destroy', $comic->id )}}" method="POST">
-              @csrf
-              @method('DELETE')
-              <input type="submit" value="Delete" class="btn btn-danger btn-sm" onclick="return confirm('Are you shure to delete this Comic?')">
-              </form>
-            </td>
-          </tr>
-        </tbody>
-        @endforeach
-    </table>
-    <div class="text-center my-3">
-      <a href="{{ route('home') }}" class="btn btn-danger">Back to Home page</a>
+    <div class="container">
+        <div class="text-center mb-3">
+            <a href="{{ route('comics.create') }}" class="btn btn-success">Create new Comic</a>
+            <a href="{{ route('home') }}" class="btn btn-danger">Back to Home page</a>
+        </div>
+        <div class="d-flex p-4">
+          <div class="row gap-3 justify-content-center align-items-center">
+            @foreach ($comics as $comic)
+                <div class="card p-3 col-3 align-items-center text-center" style="height: 450px">
+                    <img src="{{ $comic->thumb }}" class="card-img-top" alt="thumb" style="width: 200px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $comic->title }}</h5>
+                        <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary btn-sm">Details</a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        </div>
     </div>
-</div>
 @endsection
