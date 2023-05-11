@@ -17,7 +17,7 @@ class ComicsTableSeeder extends Seeder
     public function run()
     {
         $comics = config('comics'); //read comics.php file with config
-
+        Comic::truncate();
         foreach($comics as $comic){
             $newComic = new Comic();
 
