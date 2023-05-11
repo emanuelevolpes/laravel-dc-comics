@@ -10,7 +10,7 @@
             <a href="{{ route('comics.index') }}" class="btn btn-primary btn-sm">Torna all'elenco</a>
         </div>
 
-        <form action="{{ route('comics.store', $comic->id) }}" method="POST">
+        <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">
