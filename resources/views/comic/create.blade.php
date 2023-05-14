@@ -14,7 +14,10 @@
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title">
+                @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="description">Description</label>
@@ -26,11 +29,17 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" id="price" name="price">
+                <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price">
+                @error('price')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Series</label>
-                <input type="text" class="form-control" id="series" name="series">
+                <input type="text" class="form-control @error('series') is-invalid @enderror" id="series" name="series">
+                @error('series')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Sale date</label>
